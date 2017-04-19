@@ -17,4 +17,5 @@ Clean earthquake location data
 }
 \examples{
 eq_location_clean("ITALY: VERONA") # => "Verona"
+
 }

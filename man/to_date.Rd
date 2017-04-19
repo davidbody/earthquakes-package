@@ -23,8 +23,12 @@ NA values for month and day are replaced by 1.
 \details{
 Currently requires year to be >= 0.
 }
+\note{
+This function is for internal use only.
+}
 \examples{
 to_date(2017, 4, 17)  # => 2017-04-17
 to_date(2017, 4, NA)  # => 2017-04-01
 to_date(2017, NA, NA) # => 2017-01-01
+
 }

@@ -15,5 +15,10 @@ A new data frame with cleaned earthquakes data.
 \description{
 A DATE column is created based on YEAR, MONTH, DAY.
 LATITUDE and LONGITUDE are converted to numeric.
+EQ_PRIMARY and TOTAL_DEATHS are converted to numeric.
 LOCATION_NAME is cleaned by passing it to the \code{\link{eq_location_clean}} function.
+}
+\examples{
+eq_clean_data(earthquakes)
+
 }
