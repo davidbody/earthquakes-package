@@ -6,6 +6,8 @@
 #'
 #' @examples
 #' eq_location_clean("ITALY: VERONA") # => "Verona"
+#'
+#' @export
 eq_location_clean <- function(location) {
     tools::toTitleCase(tolower(sub("\\S+: ", "", location)))
 }
@@ -20,6 +22,11 @@ eq_location_clean <- function(location) {
 #' @param earthquakes A data frame containing the earthquakes data set.
 #'
 #' @return A new data frame with cleaned earthquakes data.
+#'
+#' @examples
+#' eq_clean_data(earthquakes)
+#'
+#' @export
 eq_clean_data <- function(earthquakes) {
     result <- data.frame(earthquakes)
     result$DATE <- as.Date(mapply(to_date, result$YEAR,
