@@ -10,7 +10,8 @@ Description: Provides geoms for plotting data from the NOAA Significant
 Imports:
     dplyr,
     ggplot2,
-    grid
+    grid,
+    leaflet
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
