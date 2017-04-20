@@ -11,8 +11,9 @@
 #'     popup windows.
 #'
 #' @examples
+#' \dontrun{
 #' eq_map(earthquakes, annot_col = "DATE")
-#'
+#'}
 #' @note
 #' See \code{\link{eq_create_label}} for another example.
 #'
@@ -35,12 +36,14 @@ eq_map <- function(df, annot_col) {
 #' @return Character string with the HTML label.
 #'
 #' @examples
-#' This can be used with \code{\link{eq_map}} as follows:
+#' \dontrun{
+#' # This can be used with \code{\link{eq_map}} as follows:
+#' library(dplyr)
 #'
 #' earthquakes %>%
 #'   dplyr::mutate(popup_text = eq_create_label(.)) %>%
 #'   eq_map(annot_col = "popup_text")
-#'
+#'}
 #' @export
 eq_create_label <- function(df) {
     paste(sep = "<br/>",

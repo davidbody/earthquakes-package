@@ -40,6 +40,7 @@
 #' }
 #'
 #' @examples
+#' \dontrun{
 #' # You can plot a basic earthquake timeline as follows:
 #'
 #' library(dplyr)
@@ -59,7 +60,7 @@
 #' g <- g + guides(color = guide_colorbar(title = "# deaths"),
 #'                 size = guide_legend("Richter scale value"))
 #' g
-#'
+#'}
 #' @note
 #' See \code{\link{geom_timeline_label}} for additional examples.
 #'
@@ -149,6 +150,7 @@ GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
 #' }
 #'
 #' @examples
+#' \dontrun{
 #' # You can plot a pair of earthquake timelines with labels as follows:
 #'
 #' library(dplyr)
@@ -164,11 +166,11 @@ GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
 #' g <- g + theme(legend.position = "bottom",
 #'                axis.line.y = element_blank(),
 #'                axis.ticks.y = element_blank(),
-#'                axis.title.y = element_blank()
+#'                axis.title.y = element_blank())
 #' g <- g + guides(color = guide_colorbar(title = "# deaths"),
 #'                 size = guide_legend("Richter scale value"))
 #' g
-#'
+#'}
 #' @export
 geom_timeline_label <- function(mapping = NULL, data = NULL, stat = "identity",
                                 position = "identity", na.rm = FALSE,

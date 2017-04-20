@@ -11,9 +11,9 @@
 #' @return A Date object
 #'
 #' @examples
-#' to_date(2017, 4, 17)  # => 2017-04-17
-#' to_date(2017, 4, NA)  # => 2017-04-01
-#' to_date(2017, NA, NA) # => 2017-01-01
+#' earthquakes:::to_date(2017, 4, 17)  # => 2017-04-17
+#' earthquakes:::to_date(2017, 4, NA)  # => 2017-04-01
+#' earthquakes:::to_date(2017, NA, NA) # => 2017-01-01
 #'
 #' @note This function is for internal use only.
 to_date <- function(year, month, day) {

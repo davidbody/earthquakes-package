@@ -40,6 +40,7 @@ include color, size, and alpha.
 See \code{\link{geom_timeline_label}} for additional examples.
 }
 \examples{
+\dontrun{
 # You can plot a basic earthquake timeline as follows:
 
 library(dplyr)
@@ -59,5 +60,5 @@ g <- g + theme(legend.position = "bottom",
 g <- g + guides(color = guide_colorbar(title = "# deaths"),
                 size = guide_legend("Richter scale value"))
 g
-
+}
 }

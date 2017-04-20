@@ -23,6 +23,7 @@ earthquake's magnitude (EQ_PRIMARY).
 See \code{\link{eq_create_label}} for another example.
 }
 \examples{
+\dontrun{
 eq_map(earthquakes, annot_col = "DATE")
-
+}
 }

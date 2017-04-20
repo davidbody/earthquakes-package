@@ -39,6 +39,7 @@ n_max aesthetic can be used to subset to n_max earthquakes, meaning the n_max
 largest (by magnitude) will be labeled.
 }
 \examples{
+\dontrun{
 # You can plot a pair of earthquake timelines with labels as follows:
 
 library(dplyr)
@@ -54,9 +55,9 @@ g <- g + theme_classic()
 g <- g + theme(legend.position = "bottom",
                axis.line.y = element_blank(),
                axis.ticks.y = element_blank(),
-               axis.title.y = element_blank()
+               axis.title.y = element_blank())
 g <- g + guides(color = guide_colorbar(title = "# deaths"),
                 size = guide_legend("Richter scale value"))
 g
-
+}
 }

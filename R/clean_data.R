@@ -24,8 +24,9 @@ eq_location_clean <- function(location) {
 #' @return A new data frame with cleaned earthquakes data.
 #'
 #' @examples
+#' \dontrun{
 #' eq_clean_data(earthquakes)
-#'
+#'}
 #' @export
 eq_clean_data <- function(earthquakes) {
     result <- data.frame(earthquakes)

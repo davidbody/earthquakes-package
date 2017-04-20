@@ -18,10 +18,12 @@ Creates HTML labels with location, magnitude, and total deaths for
 earthquake data.
 }
 \examples{
-This can be used with \\code{\\link{eq_map}} as follows:
+\dontrun{
+# This can be used with \\code{\\link{eq_map}} as follows:
+library(dplyr)
 
 earthquakes \%>\%
   dplyr::mutate(popup_text = eq_create_label(.)) \%>\%
   eq_map(annot_col = "popup_text")
-
+}
 }

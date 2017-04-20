@@ -19,6 +19,7 @@ EQ_PRIMARY and TOTAL_DEATHS are converted to numeric.
 LOCATION_NAME is cleaned by passing it to the \code{\link{eq_location_clean}} function.
 }
 \examples{
+\dontrun{
 eq_clean_data(earthquakes)
-
+}
 }
