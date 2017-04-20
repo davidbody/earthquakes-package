@@ -65,48 +65,65 @@
 #' See \code{\link{geom_timeline_label}} for additional examples.
 #'
 #' @export
-geom_timeline <- function(mapping = NULL, data = NULL, stat = "identity",
-                          position = "identity", na.rm = FALSE,
-                          show.legend = NA, inherit.aes = TRUE, ...) {
-    ggplot2::layer(
-        geom = GeomTimeline,
-        mapping = mapping,
-        data = data,
-        stat = stat,
-        position = position,
-        show.legend = show.legend,
-        inherit.aes = inherit.aes,
-        params = list(na.rm = na.rm, ...)
-    )
-}
+geom_timeline <-
+    function(mapping = NULL,
+             data = NULL,
+             stat = "identity",
+             position = "identity",
+             na.rm = FALSE,
+             show.legend = NA,
+             inherit.aes = TRUE,
+             ...) {
+        ggplot2::layer(
+            geom = GeomTimeline,
+            mapping = mapping,
+            data = data,
+            stat = stat,
+            position = position,
+            show.legend = show.legend,
+            inherit.aes = inherit.aes,
+            params = list(na.rm = na.rm, ...)
+        )
+    }
 
-GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
-                        required_aes = c("x", "y"),
-                        non_missing_aes = c("size", "shape", "color"),
-                        default_aes = ggplot2::aes(shape = 19,
-                                                   color = "black",
-                                                   size = 1.5,
-                                                   alpha = NA,
-                                                   fill = NA,
-                                                   stroke = 0.5),
-                        draw_key = ggplot2::draw_key_point,
-                        draw_panel = function(data, panel_scales, coord) {
-                            coords <- coord$transform(data, panel_scales)
-                            grid::grobTree(
-                                grid::segmentsGrob(x0 = 0.0,
-                                                   y0 = coords$y,
-                                                   x1 = 1.0,
-                                                   y1 = coords$y,
-                                                   gp = grid::gpar(col = "grey")),
-                            grid::pointsGrob(x = coords$x,
-                                             y = coords$y,
-                                             pch = coords$shape,
-                                             gp = grid::gpar(col = alpha(coords$colour, coords$alpha),
-                                                             fill = alpha(coords$fill, coords$alpha),
-                                                             fontsize = coords$size * .pt + coords$stroke * .stroke / 2,
-                                                             lwd = coords$stroke * .stroke / 2))
-                                )
-                        })
+GeomTimeline <- ggplot2::ggproto(
+    "GeomTimeline",
+    ggplot2::Geom,
+    required_aes = c("x", "y"),
+    non_missing_aes = c("size", "shape", "color"),
+    default_aes = ggplot2::aes(
+        shape = 19,
+        color = "black",
+        size = 1.5,
+        alpha = NA,
+        fill = NA,
+        stroke = 0.5
+    ),
+    draw_key = ggplot2::draw_key_point,
+    draw_panel = function(data, panel_scales, coord) {
+        coords <- coord$transform(data, panel_scales)
+        grid::grobTree(
+            grid::segmentsGrob(
+                x0 = 0.0,
+                y0 = coords$y,
+                x1 = 1.0,
+                y1 = coords$y,
+                gp = grid::gpar(col = "grey")
+            ),
+            grid::pointsGrob(
+                x = coords$x,
+                y = coords$y,
+                pch = coords$shape,
+                gp = grid::gpar(
+                    col = alpha(coords$colour, coords$alpha),
+                    fill = alpha(coords$fill, coords$alpha),
+                    fontsize = coords$size * .pt + coords$stroke * .stroke / 2,
+                    lwd = coords$stroke * .stroke / 2
+                )
+            )
+        )
+    }
+)
 
 #' Labels for earthquake timeline plot
 #'
@@ -172,46 +189,56 @@ GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
 #' g
 #'}
 #' @export
-geom_timeline_label <- function(mapping = NULL, data = NULL, stat = "identity",
-                                position = "identity", na.rm = FALSE,
-                                show.legend = NA, inherit.aes = TRUE, ...) {
-    ggplot2::layer(
-        geom = GeomTimelineLabel,
-        mapping = mapping,
-        data = data,
-        stat = stat,
-        position = position,
-        show.legend = show.legend,
-        inherit.aes = inherit.aes,
-        params = list(na.rm = na.rm, ...)
-    )
-}
+geom_timeline_label <-
+    function(mapping = NULL,
+             data = NULL,
+             stat = "identity",
+             position = "identity",
+             na.rm = FALSE,
+             show.legend = NA,
+             inherit.aes = TRUE,
+             ...) {
+        ggplot2::layer(
+            geom = GeomTimelineLabel,
+            mapping = mapping,
+            data = data,
+            stat = stat,
+            position = position,
+            show.legend = show.legend,
+            inherit.aes = inherit.aes,
+            params = list(na.rm = na.rm, ...)
+        )
+    }
 
-GeomTimelineLabel <- ggplot2::ggproto("GeomTimelineLabel", ggplot2::Geom,
-                             required_aes = c("x", "label"),
-                             default_aes = ggplot2::aes(n_max = NA),
-                             setup_data = function(data, params) {
-                                 n <- data$n_max[1]
-                                 dplyr::top_n(dplyr::group_by_(data, "group"), n, size)
-                             },
-                             draw_panel = function(data, panel_scales, coord) {
-                                 coords <- coord$transform(data, panel_scales)
-                                 grid::grobTree(
-                                     grid::segmentsGrob(
-                                         x0 = coords$x,
-                                         y0 = coords$y,
-                                         x1 = coords$x,
-                                         y1 = coords$y + 0.1,
-                                         gp = grid::gpar()
-                                     ),
-                                     grid::textGrob(
-                                         x = coords$x,
-                                         y = coords$y + 0.1,
-                                         label = coords$label,
-                                         rot = 45,
-                                         hjust = -0.1,
-                                         vjust = -0.1,
-                                         gp = grid::gpar()
-                                     )
-                                 )
-                             })
+GeomTimelineLabel <-
+    ggplot2::ggproto(
+        "GeomTimelineLabel",
+        ggplot2::Geom,
+        required_aes = c("x", "label"),
+        default_aes = ggplot2::aes(n_max = NA),
+        setup_data = function(data, params) {
+            n <- data$n_max[1]
+            dplyr::top_n(dplyr::group_by_(data, "group"), n, size)
+        },
+        draw_panel = function(data, panel_scales, coord) {
+            coords <- coord$transform(data, panel_scales)
+            grid::grobTree(
+                grid::segmentsGrob(
+                    x0 = coords$x,
+                    y0 = coords$y,
+                    x1 = coords$x,
+                    y1 = coords$y + 0.1,
+                    gp = grid::gpar()
+                ),
+                grid::textGrob(
+                    x = coords$x,
+                    y = coords$y + 0.1,
+                    label = coords$label,
+                    rot = 45,
+                    hjust = -0.1,
+                    vjust = -0.1,
+                    gp = grid::gpar()
+                )
+            )
+        }
+    )
