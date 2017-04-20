@@ -31,7 +31,7 @@ rather than combining with them.}
 }
 \description{
 This geom is intended to be used in conjunction with the
-\code{\link{geom_timeline}} geom to ad a vertical line with a text
+\code{\link{geom_timeline}} geom to add a vertical line with a text
 annotation (e.g. the location of the earthquake) for each data point on an
 earthquake timeline. The x aesthetic specifies the date of the earthquake
 and the label aesthetic specifies the label for the annotation. An optional

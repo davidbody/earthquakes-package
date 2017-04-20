@@ -33,7 +33,7 @@ rather than combining with them.}
 The timeline geom plots a time line of earthquakes with a point for each
 earthquake. The x aesthetic is a date and the y aesthetic is a factor
 indicating some stratification in which case multiple time lines will be
-ploted for each level of the factor (e.g. country). Optional aesthetics
+plotted for each level of the factor (e.g. country). Optional aesthetics
 include color, size, and alpha.
 }
 \note{
