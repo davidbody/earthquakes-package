@@ -9,7 +9,7 @@
 #'
 #' @export
 eq_location_clean <- function(location) {
-    tools::toTitleCase(tolower(sub("\\S+: ", "", location)))
+    tools::toTitleCase(trimws(tolower(sub("\\S+: +", "", location))))
 }
 
 #' Clean earthquake data frame
