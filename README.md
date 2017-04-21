@@ -8,3 +8,5 @@ It consists of four components:
 - Helper functions to clean the data
 - Geoms for plotting earthquake timelines
 - Functions for plotting interactive earthquake maps
+
+Full documentation, including a vignette, and unit tests are included.
