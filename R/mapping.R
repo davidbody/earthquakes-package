@@ -47,8 +47,8 @@ eq_map <- function(df, annot_col) {
 #' @export
 eq_create_label <- function(df) {
     paste(sep = "<br/>",
-          paste("<b>Location:</b> ", df$LOCATION_NAME),
-          paste("<b>Magnitude:</b> ", df$EQ_PRIMARY),
-          paste("<b>Total deaths:</b> ", df$TOTAL_DEATHS)
+          paste("<b>Location:</b>", df$LOCATION_NAME),
+          paste("<b>Magnitude:</b>", df$EQ_PRIMARY),
+          paste("<b>Total deaths:</b>", df$TOTAL_DEATHS)
     )
 }
