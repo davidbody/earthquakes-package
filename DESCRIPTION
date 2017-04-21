@@ -6,7 +6,7 @@ Authors@R: person("David", "Body", email = "davidbody@bigcreek.com",
     role = c("aut", "cre"))
 Description: Provides geoms for plotting data from the NOAA Significant 
     Earthquake Database which can be obtained at 
-    https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
+    https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1.
 Imports:
     dplyr,
     ggplot2,
@@ -17,6 +17,8 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests: knitr,
+    lubridate,
+    readr,
     rmarkdown,
     testthat
 VignetteBuilder: knitr

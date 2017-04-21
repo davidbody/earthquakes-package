@@ -19,11 +19,11 @@
 #'
 #' @export
 eq_map <- function(df, annot_col) {
-    leaflet::leaflet() %>%
-        leaflet::addTiles() %>%
-        leaflet::addCircleMarkers(data = df, lng = ~LONGITUDE, lat = ~LATITUDE,
-                                  radius = ~EQ_PRIMARY, weight = 1,
-                                  popup = df[[annot_col]])
+    the_map <- leaflet::leaflet()
+    the_map <- leaflet::addTiles(the_map)
+    leaflet::addCircleMarkers(the_map, data = df, lng = ~LONGITUDE, lat = ~LATITUDE,
+                              radius = ~EQ_PRIMARY, weight = 1,
+                              popup = df[[annot_col]])
 }
 
 #' Create HTML labels for earthquakes

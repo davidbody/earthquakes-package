@@ -26,6 +26,11 @@
 #' @param inherit.aes If FALSE, overrides the default aesthetics,
 #'     rather than combining with them.
 #'
+#' @param ... other arguments passed on to \code{\link{layer}}. These are
+#'   often aesthetics, used to set an aesthetic to a fixed value, like
+#'   \code{color = "red"} or \code{size = 3}. They may also be parameters
+#'   to the paired geom/stat.
+#'
 #' @section Aesthetics
 #'
 #' \code{geom_timeline} understands the following aesthetics
@@ -154,6 +159,11 @@ GeomTimeline <- ggplot2::ggproto(
 #'
 #' @param inherit.aes If FALSE, overrides the default aesthetics,
 #'     rather than combining with them.
+#'
+#' @param ... other arguments passed on to \code{\link{layer}}. These are
+#'   often aesthetics, used to set an aesthetic to a fixed value, like
+#'   \code{color = "red"} or \code{size = 3}. They may also be parameters
+#'   to the paired geom/stat.
 #'
 #' @section Aesthetics
 #'
