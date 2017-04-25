@@ -182,7 +182,11 @@ GeomTimelineLabel <-
         default_aes = ggplot2::aes(n_max = NA),
         setup_data = function(data, params) {
             n <- data$n_max[1]
-            dplyr::top_n(dplyr::group_by_(data, "group"), n, size)
+            if (is.numeric(n)) {
+                dplyr::top_n(dplyr::group_by_(data, "group"), n, size)
+            } else {
+                data
+            }
         },
         draw_panel = function(data, panel_scales, coord) {
             coords <- coord$transform(data, panel_scales)
