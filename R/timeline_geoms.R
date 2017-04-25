@@ -6,42 +6,19 @@
 #' plotted for each level of the factor (e.g. country). Optional aesthetics
 #' include color, size, and alpha.
 #'
-#' @param mapping Set of aesthetic mappings specified by aes.
-#'
+#' @inheritParams ggplot2::geom_point
 #' @param data The earthquake data to be plotted. See the example for details.
 #'
-#' @param stat The statistical transformation to use on the data for this
-#'     layer, as a string.
-#'
-#' @param position Position adjustment, either as a string, or the
-#'     result of a call to a position adjustment function.
-#'
-#' @param na.rm If FALSE (the default), removes missing values with a
-#'     warning. If TRUE silently removes missing values.
-#'
-#' @param show.legend logical. Should this layer be included in the
-#'     legends? NA, the default, includes if any aesthetics are
-#'     mapped. FALSE never includes, and TRUE always includes.
-#'
-#' @param inherit.aes If FALSE, overrides the default aesthetics,
-#'     rather than combining with them.
-#'
-#' @param ... other arguments passed on to \code{\link{layer}}. These are
-#'   often aesthetics, used to set an aesthetic to a fixed value, like
-#'   \code{color = "red"} or \code{size = 3}. They may also be parameters
-#'   to the paired geom/stat.
-#'
-#' @section Aesthetics
-#'
+#' @section Aesthetics:
 #' \code{geom_timeline} understands the following aesthetics
 #' (required aesthetics are in bold):
 #'
-#' \\itemize{
-#'   \\item \\strong{x}
-#'   \\item \\strong{y}
-#'   \\item color
-#'   \\item size
-#'   \\item alpha
+#' \itemize{
+#'   \item \strong{x}
+#'   \item \strong{y}
+#'   \item color
+#'   \item size
+#'   \item alpha
 #' }
 #'
 #' @examples
@@ -140,40 +117,17 @@ GeomTimeline <- ggplot2::ggproto(
 #' n_max aesthetic can be used to subset to n_max earthquakes, meaning the n_max
 #' largest (by magnitude) will be labeled.
 #'
-#' @param mapping Set of aesthetic mappings specified by aes.
-#'
+#' @inheritParams ggplot2::geom_point
 #' @param data The earthquake data to be plotted. See the example for details.
 #'
-#' @param stat The statistical transformation to use on the data for this
-#'     layer, as a string.
-#'
-#' @param position Position adjustment, either as a string, or the
-#'     result of a call to a position adjustment function.
-#'
-#' @param na.rm If FALSE (the default), removes missing values with a
-#'     warning. If TRUE silently removes missing values.
-#'
-#' @param show.legend logical. Should this layer be included in the
-#'     legends? NA, the default, includes if any aesthetics are
-#'     mapped. FALSE never includes, and TRUE always includes.
-#'
-#' @param inherit.aes If FALSE, overrides the default aesthetics,
-#'     rather than combining with them.
-#'
-#' @param ... other arguments passed on to \code{\link{layer}}. These are
-#'   often aesthetics, used to set an aesthetic to a fixed value, like
-#'   \code{color = "red"} or \code{size = 3}. They may also be parameters
-#'   to the paired geom/stat.
-#'
-#' @section Aesthetics
-#'
-#' \code{geom_timeline} understands the following aesthetics
+#' @section Aesthetics:
+#' \code{geom_timeline_label} understands the following aesthetics
 #' (required aesthetics are in bold):
 #'
-#' \\itemize{
-#'   \\item \\string{x}
-#'   \\item \\strong{label}
-#'   \\item n_max
+#' \itemize{
+#'   \item \strong{x}
+#'   \item \strong{label}
+#'   \item n_max
 #' }
 #'
 #' @examples
