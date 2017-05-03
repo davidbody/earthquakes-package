@@ -1,37 +1,47 @@
+---
+output: github_document
+always_allow_html: yes
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
 [![Build Status](https://travis-ci.org/davidbody/earthquakes-package.svg?branch=master)](https://travis-ci.org/davidbody/earthquakes-package)
 
-Earthquakes package
-===================
+# Earthquakes package
 
 This is an R package for the Coursera course [Mastering Software Development in R Capstone](https://www.coursera.org/learn/r-capstone/home/welcome).
 
 It consists of four components:
 
--   Data from NOAA Significant Earthquakes Database
--   Helper functions to clean the data
--   Geoms for plotting earthquake time lines
--   Functions for plotting interactive earthquake maps
+- Data from NOAA Significant Earthquakes Database
+- Helper functions to clean the data
+- Geoms for plotting earthquake time lines
+- Functions for plotting interactive earthquake maps
 
 Full documentation, including a vignette, and unit tests are included.
 
-Installation
-============
+# Installation
 
-``` r
+```{r, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("davidbody/earthquakes-package")
 ```
 
-Usage
------
+## Usage
 
 See the vignette for complete details.
 
 ### Earthquake data
 
-``` r
+```{r, message=FALSE}
 library(earthquakes)
 library(dplyr)
 
@@ -44,7 +54,7 @@ clean_earthquakes <- earthquakes %>%
 
 ### Earthquake time lines
 
-``` r
+```{r example-1, fig.width=7, fig.height=7}
 library(ggplot2)
 
 recent_earthquakes <- clean_earthquakes %>%
@@ -65,11 +75,9 @@ g <- g + guides(color = guide_colorbar(title = "# deaths"),
 g
 ```
 
-![](README-example-1-1.png)
-
 ### Earthquake maps
 
-``` r
+```{r example-2, eval=FALSE}
 clean_earthquakes %>%
     filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
     dplyr::mutate(popup_text = eq_create_label(.)) %>%
